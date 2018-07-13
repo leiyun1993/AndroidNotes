@@ -21,7 +21,7 @@ class SamplePresenter(view: ISampleContract.View) :
         BasePresenter<ISampleContract.View>(view), ISampleContract.Presenter {
 
     override fun userLogin() {
-        thread {
+        thread {        //模拟网络请求和其他逻辑处理
             sleep(2000)
             Handler(Looper.getMainLooper()).post {
                 mView?.onLoginSuccess(User("test", "18", "男"))

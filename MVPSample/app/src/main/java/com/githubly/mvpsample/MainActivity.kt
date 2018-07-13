@@ -6,6 +6,7 @@ import com.githubly.mvpsample.contract.ISampleContract
 import com.githubly.mvpsample.model.User
 import com.githubly.mvpsample.presenter.SamplePresenter
 import kotlinx.android.synthetic.main.activity_main.*
+
 /**
  * 类名：MainActivity
  * 作者：Yun.Lei
@@ -20,6 +21,9 @@ class MainActivity : BaseMVPActivity<SamplePresenter>(), ISampleContract.View {
     override val contentViewID: Int
         get() = R.layout.activity_main
 
+    /**
+     * 初始化Presenter
+     */
     override fun initPresenter(): SamplePresenter? = SamplePresenter(this)
 
 
@@ -39,10 +43,19 @@ class MainActivity : BaseMVPActivity<SamplePresenter>(), ISampleContract.View {
 
     }
 
+    /**
+     * 获取数据接口
+     */
     override fun getUserName(): String = edtUserName.text.toString()
 
+    /**
+     * 获取数据接口
+     */
     override fun getPassword(): String = edtPassword.text.toString()
 
+    /**
+     * 绑定数据
+     */
     override fun onLoginSuccess(user: User) {
         //dismissLoading
         dismissLoadingDialog()
