@@ -72,3 +72,4 @@ public static String getUniqueId(Context context){
     }
 }
 ```
+帖子出处：https://blog.csdn.net/sunsteam/article/details/73189268
